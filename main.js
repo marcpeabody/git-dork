@@ -3,7 +3,6 @@ const path = require( "path" );
 const reload = require( "electron-reload" );
 const isDev = require( "electron-is-dev" );
 const menus = require( "./menus" );
-const caller = require( "./caller" );
 const { app, BrowserWindow, ipcMain, dialog } = electron;
 
 let mainWindow = null;
@@ -33,9 +32,3 @@ app.on( "ready", () => {
     } );
     menus.buildMenu();
 } );
-
-// ipcMain.on( "do-caller", ( e, arg ) => {
-//     caller.doCaller((output) => {
-//         console.log(output);
-//     });
-// });
